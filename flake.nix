@@ -13,7 +13,7 @@
     # Example for 'numerical-helpers'
     library_a = {
         flake = false;
-        url = "path:~/Code/Sandkasse/lib1/";
+        url = "path:../lib1/";
     };
 
     # Example for 'sim_utils'
