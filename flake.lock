@@ -3,11 +3,11 @@
     "library_a": {
       "flake": false,
       "locked": {
-        "path": "../lib1/",
+        "path": "~/Code/Sandkasse/lib1/",
         "type": "path"
       },
       "original": {
-        "path": "../lib1/",
+        "path": "~/Code/Sandkasse/lib1/",
         "type": "path"
       },
       "parent": []

@@ -13,7 +13,7 @@
     # Example for 'numerical-helpers'
     library_a = {
         flake = false;
-        url = "path:../lib1/";
+        url = "path:~/Code/Sandkasse/lib1/";
     };
 
     # Example for 'sim_utils'
@@ -30,19 +30,19 @@
 
       # Define how to build library_a
       buildLibrary_a = pkgs.stdenv.mkDerivation rec {
-        pname = "numerical-helpers";
+        pname = "lib_1";
         version = "git"; # Or a specific commit/version
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out'';
+        configurePhase = ''cmake -S library_a.url -B build -DCMAKE_INSTALL_PREFIX=$out'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install build'';
       };
 
       # Define how to build library_b
       buildLibrary_b = pkgs.stdenv.mkDerivation rec {
-        pname = "sim-utils";
+        pname = "lib_2";
         version = "git";
         src = library_b;
         buildInputs = with pkgs; [ cmake gcc buildLibrary_a ];
