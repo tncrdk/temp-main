@@ -1,3 +1,4 @@
+# Based on response in sec2 Nix-v2-workflow.md
 {
   description = "Main Numerical Simulation with scattered local dependencies";
 
@@ -36,33 +37,18 @@
       };
 
       # Define how to build library_b
-      buildSimUtils = pkgs.stdenv.mkDerivation rec {
+      buildLibrary_b = pkgs.stdenv.mkDerivation rec {
         pname = "sim-utils";
         version = "git";
         src = library_b;
         buildInputs = with pkgs; [ cmake gcc buildLibrary_a ];
-        configurePhase = ''cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out -DNUMERICAL_HELPERS_DIR=${buildLibrary_a}'';
+        configurePhase = ''cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install build'';
       };
-
-      # Define how to build physicsEngine (might depend on others)
-      buildPhysicsEngine = pkgs.stdenv.mkDerivation rec {
-        pname = "physics-engine";
-        version = "git";
-        src = physicsEngine;
-        buildInputs = with pkgs; [ cmake gcc buildLibrary_a buildSimUtils ];
-        configurePhase = ''cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out \
-          -DNUMERICAL_HELPERS_DIR=${buildLibrary_a} \
-          -DSIM_UTILS_DIR=${buildSimUtils}
-        '';
-        buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install build'';
-      };
-
 
       # Your main numerical simulation project itself
-      myNumericalSim = pkgs.stdenv.mkDerivation rec {
+      myExperiment = pkgs.stdenv.mkDerivation rec {
         pname = "my-numerical-sim";
         version = "git";
         src = ./.; # The current directory (your main project's Git repo)
@@ -71,17 +57,12 @@
           cmake
           gcc
           buildLibrary_a
-          buildSimUtils
-          buildPhysicsEngine
+          buildLibrary_b
           # Other common libraries from Nixpkgs
-          boost
-          eigen
         ];
         configurePhase = ''
           cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out \
-            -DNUMERICAL_HELPERS_DIR=${buildLibrary_a} \
-            -DSIM_UTILS_DIR=${buildSimUtils} \
-            -DPHYSICS_ENGINE_DIR=${buildPhysicsEngine}
+          --prefix="library_a.url;library_b.url"
         '';
         buildPhase = ''
           cmake --build build
@@ -98,15 +79,14 @@
         ];
         nativeBuildInputs = [
           buildLibrary_a
-          buildSimUtils
-          buildPhysicsEngine
-          myNumericalSim # If you want to use the built sim executable directly
+          buildLibrary_b
+          myExperiment # If you want to use the built sim executable directly
         ];
         shellHook = ''
           echo "Welcome to the Nix numerical simulation development environment!"
           echo "All your local dependencies are built and available."
         '';
       };
-      packages.${system}.default = myNumericalSim;
+      packages.${system}.default = myExperiment;
     };
 }
