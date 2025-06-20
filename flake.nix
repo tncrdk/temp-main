@@ -11,12 +11,16 @@
     # The user will override this in their local setup.
 
     # Example for 'numerical-helpers'
-    library_a.url = "path:../lib1/"; # Placeholder
-    library_a.flake = false;
+    library_a = {
+        flake = false;
+        url = "path:../lib1/";
+    };
 
     # Example for 'sim_utils'
-    library_b.url = "path:../lib2/"; # Placeholder
-    library_b.flake = false;
+    library_b = {
+        flake = false;
+        url = "path:../lib2/";
+    };
   };
 
   outputs = { self, nixpkgs, library_a, library_b, ... }@inputs:

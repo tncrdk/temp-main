@@ -1,0 +1,53 @@
+{
+  "nodes": {
+    "library_a": {
+      "flake": false,
+      "locked": {
+        "path": "../lib1/",
+        "type": "path"
+      },
+      "original": {
+        "path": "../lib1/",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "library_b": {
+      "flake": false,
+      "locked": {
+        "path": "../lib2/",
+        "type": "path"
+      },
+      "original": {
+        "path": "../lib2/",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1735563628,
+        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "library_a": "library_a",
+        "library_b": "library_b",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
