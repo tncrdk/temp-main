@@ -35,9 +35,9 @@
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out'';
+        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out/lib1'';
         buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install build'';
+        installPhase = ''cmake --install ../install'';
       };
 
       # Define how to build library_b
@@ -46,9 +46,9 @@
         # version = "git";
         src = library_b;
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out'';
+        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out/lib2'';
         buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install build'';
+        installPhase = ''cmake --install ../install'';
       };
 
       # Your main numerical simulation project itself
@@ -83,10 +83,15 @@
         packages = with pkgs; [
           git cmake gcc gdb valgrind
         ];
-        nativeBuildInputs = [
+        buildInputs = with pkgs; [
           buildLibrary_a
           buildLibrary_b
           myExperiment # If you want to use the built sim executable directly
+          git
+          cmake
+          gcc
+          gdb
+          valgrind
         ];
         shellHook = ''
           echo "Welcome to the Nix numerical simulation development environment!"
