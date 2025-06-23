@@ -13,13 +13,13 @@
     # Example for 'numerical-helpers'
     library_a = {
         flake = false;
-        url = "path:../lib1/";
+        url = "../lib1/";
     };
 
     # Example for 'sim_utils'
     library_b = {
         flake = false;
-        url = "path:../lib2/";
+        url = "../lib2/";
     };
   };
 
@@ -35,7 +35,7 @@
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S library_a.url -B build -DCMAKE_INSTALL_PREFIX=$out'';
+        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install build'';
       };
@@ -45,8 +45,8 @@
         pname = "lib_2";
         version = "git";
         src = library_b;
-        buildInputs = with pkgs; [ cmake gcc buildLibrary_a ];
-        configurePhase = ''cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out'';
+        buildInputs = with pkgs; [ cmake gcc ];
+        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install build'';
       };
@@ -62,6 +62,8 @@
           gcc
           buildLibrary_a
           buildLibrary_b
+          # library_a.defaultPackage.${system}
+          # library_b.defaultPackage.${system}
           # Other common libraries from Nixpkgs
         ];
         configurePhase = ''
@@ -82,8 +84,8 @@
           git cmake gcc gdb valgrind
         ];
         nativeBuildInputs = [
-          buildLibrary_a
-          buildLibrary_b
+          # buildLibrary_a
+          # buildLibrary_b
           myExperiment # If you want to use the built sim executable directly
         ];
         shellHook = ''
