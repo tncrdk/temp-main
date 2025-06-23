@@ -34,10 +34,10 @@
         # version = "git"; # Or a specific commit/version
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
-        buildInputs = with pkgs; [ cmake gcc make ];
-        configurePhase = ''cmake -S ${src} -B build'';
+        buildInputs = with pkgs; [ cmake gcc ];
+        configurePhase = ''echo ${src} && cmake -S ${src} -B ${src}/build'';
         buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install $out/install'';
+        installPhase = ''cmake --install ${src}/build --prefix=${src}/install'';
       };
 
       # Define how to build library_b
@@ -45,7 +45,7 @@
         name = "lib_2";
         # version = "git";
         src = library_b;
-        buildInputs = with pkgs; [ cmake gcc make ];
+        buildInputs = with pkgs; [ cmake gcc ];
         configurePhase = ''cmake -S ${src} -B $out/build'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install $out/install'';
