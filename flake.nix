@@ -30,30 +30,30 @@
 
       # Define how to build library_a
       buildLibrary_a = pkgs.stdenv.mkDerivation rec {
-        pname = "lib_1";
+        name = "lib_1";
         # version = "git"; # Or a specific commit/version
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
-        buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B $out/build -DCMAKE_INSTALL_PREFIX=$out/lib1'';
+        buildInputs = with pkgs; [ cmake gcc make ];
+        configurePhase = ''cmake -S ${src} -B build'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install $out/install'';
       };
 
       # Define how to build library_b
       buildLibrary_b = pkgs.stdenv.mkDerivation rec {
-        pname = "lib_2";
+        name = "lib_2";
         # version = "git";
         src = library_b;
-        buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B $out/build -DCMAKE_INSTALL_PREFIX=$out/lib2'';
+        buildInputs = with pkgs; [ cmake gcc make ];
+        configurePhase = ''cmake -S ${src} -B $out/build'';
         buildPhase = ''cmake --build build'';
         installPhase = ''cmake --install $out/install'';
       };
 
       # Your main numerical simulation project itself
       myExperiment = pkgs.stdenv.mkDerivation rec {
-        pname = "my-numerical-sim";
+        name = "myExperiment";
         version = "git";
         src = self; # The current directory (your main project's Git repo)
 
@@ -83,15 +83,10 @@
         packages = with pkgs; [
           git cmake gcc gdb valgrind
         ];
-        buildInputs = with pkgs; [
+        buildInputs = [
           buildLibrary_a
           buildLibrary_b
           myExperiment # If you want to use the built sim executable directly
-          git
-          cmake
-          gcc
-          gdb
-          valgrind
         ];
         shellHook = ''
           echo "Welcome to the Nix numerical simulation development environment!"
