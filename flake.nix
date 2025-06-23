@@ -13,13 +13,13 @@
     # Example for 'numerical-helpers'
     library_a = {
         flake = false;
-        url = "/home/thorb/Code/Sandkasse/lib1/";
+        url = "path:/home/thorb/Code/Sandkasse/lib1/";
     };
 
     # Example for 'sim_utils'
     library_b = {
         flake = false;
-        url = "/home/thorb/Code/Sandkasse/lib2/";
+        url = "path:/home/thorb/Code/Sandkasse/lib2/";
     };
   };
 
@@ -67,14 +67,14 @@
           # Other common libraries from Nixpkgs
         ];
         configurePhase = ''
-          cmake -S $src -B build -DCMAKE_INSTALL_PREFIX=$out \
+          cmake -S ${src} -B $out/main/build -DCMAKE_INSTALL_PREFIX=$out \
           --prefix="library_a.url;library_b.url"
         '';
         buildPhase = ''
-          cmake --build build
+          cmake --build $out/main/build
         '';
         installPhase = ''
-          cmake --install build
+          cmake --install $out/main/build --prefix=$out/install
         '';
       };
 
