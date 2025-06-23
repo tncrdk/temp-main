@@ -3,26 +3,28 @@
     "library_a": {
       "flake": false,
       "locked": {
-        "path": "../lib1/",
+        "lastModified": 1750663746,
+        "narHash": "sha256-jkUdK20dmnISRy1rvVi7550hLKrOEzrdbxZ+FIqoxrE=",
+        "path": "/home/thorb/Code/Sandkasse/lib1/",
         "type": "path"
       },
       "original": {
-        "path": "../lib1/",
+        "path": "/home/thorb/Code/Sandkasse/lib1/",
         "type": "path"
-      },
-      "parent": []
+      }
     },
     "library_b": {
       "flake": false,
       "locked": {
-        "path": "../lib2/",
+        "lastModified": 1750663666,
+        "narHash": "sha256-YlokN6vnEs9TTukaVpwHh66RXd4wk3lN2y99+Cmpj6o=",
+        "path": "/home/thorb/Code/Sandkasse/lib2/",
         "type": "path"
       },
       "original": {
-        "path": "../lib2/",
+        "path": "/home/thorb/Code/Sandkasse/lib2/",
         "type": "path"
-      },
-      "parent": []
+      }
     },
     "nixpkgs": {
       "locked": {
