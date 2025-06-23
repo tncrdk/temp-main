@@ -35,9 +35,9 @@
         src = library_a; # Source from the input
         # ... build logic for library_a (e.g., CMake, buildInputs)
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out/lib1'';
+        configurePhase = ''cmake -S ${src} -B $out/build -DCMAKE_INSTALL_PREFIX=$out/lib1'';
         buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install ../install'';
+        installPhase = ''cmake --install $out/install'';
       };
 
       # Define how to build library_b
@@ -46,16 +46,16 @@
         # version = "git";
         src = library_b;
         buildInputs = with pkgs; [ cmake gcc ];
-        configurePhase = ''cmake -S ${src} -B build -DCMAKE_INSTALL_PREFIX=$out/lib2'';
+        configurePhase = ''cmake -S ${src} -B $out/build -DCMAKE_INSTALL_PREFIX=$out/lib2'';
         buildPhase = ''cmake --build build'';
-        installPhase = ''cmake --install ../install'';
+        installPhase = ''cmake --install $out/install'';
       };
 
       # Your main numerical simulation project itself
       myExperiment = pkgs.stdenv.mkDerivation rec {
         pname = "my-numerical-sim";
         version = "git";
-        src = ./.; # The current directory (your main project's Git repo)
+        src = self; # The current directory (your main project's Git repo)
 
         buildInputs = with pkgs; [
           cmake
