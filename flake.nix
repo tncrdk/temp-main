@@ -84,8 +84,8 @@
           git cmake gcc gdb valgrind
         ];
         nativeBuildInputs = [
-          # buildLibrary_a
-          # buildLibrary_b
+          buildLibrary_a
+          buildLibrary_b
           myExperiment # If you want to use the built sim executable directly
         ];
         shellHook = ''
