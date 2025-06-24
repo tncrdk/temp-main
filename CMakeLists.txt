@@ -1,6 +1,7 @@
 # main_project/CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(main_project VERSION 1.0.0 LANGUAGES CXX)
+include(CMakePrintHelpers)
 
 # Search for lib_a
 # find_package will look in CMAKE_PREFIX_PATH/lib/cmake/<PackageName>
@@ -10,7 +11,7 @@ find_package(lib_a CONFIG REQUIRED)
 # Search for lib_b
 find_package(lib_b CONFIG REQUIRED)
 
-# Add the executable target
+cmake_print_variables(CMAKE_INSTALL_PREFIX)# Add the executable target
 add_executable(my_app main.cpp)
 
 # Link the executable with the imported libraries
