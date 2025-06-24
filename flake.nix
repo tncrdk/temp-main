@@ -49,7 +49,7 @@
           # Other common libraries from Nixpkgs
         ];
         configurePhase = ''
-          cmake -S ${src} -B $out/build -DCMAKE_INSTALL_PREFIX="library_a.url;library_b.url"
+          cmake -S ${src} -B $out/build -DCMAKE_PREFIX_PATH="library_a.url;library_b.url"
         '';
         buildPhase = ''
           cmake --build $out/build
