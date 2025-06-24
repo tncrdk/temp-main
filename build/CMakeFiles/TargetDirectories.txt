@@ -1,3 +1,0 @@
-/home/thorb/Code/Sandkasse/main_project/build/CMakeFiles/my_app.dir
-/home/thorb/Code/Sandkasse/main_project/build/CMakeFiles/edit_cache.dir
-/home/thorb/Code/Sandkasse/main_project/build/CMakeFiles/rebuild_cache.dir

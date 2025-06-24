@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/my_app.dir/main.cpp.o -o my_app  -Wl,-rpath,/home/thorb/Code/Sandkasse/lib1/install/lib:/home/thorb/Code/Sandkasse/lib2/install/lib /home/thorb/Code/Sandkasse/lib1/install/lib/liblib_a.so /home/thorb/Code/Sandkasse/lib2/install/lib/liblib_b.so 
