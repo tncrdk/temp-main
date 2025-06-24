@@ -13,6 +13,9 @@ int main() {
     int sum = lib_a::add_numbers(10, 5);
     std::cout << "Sum from lib_a: 10 + 5 = " << sum << std::endl;
 
+    sum = lib_a::add_2(5);
+    std::cout << "Sum_2 from lib_a: 2 + 5 = " << sum << std::endl;
+
     // Use functions from lib_b
     std::cout << lib_b::get_message_b() << std::endl;
     int product = lib_b::multiply_numbers(7, 3);
