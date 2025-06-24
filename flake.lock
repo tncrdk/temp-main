@@ -60,8 +60,8 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1750686702,
-        "narHash": "sha256-OVbZsl5wUu99qRFy+9OjRs5rBzETa0W3WDpVwS6Gf3E=",
+        "lastModified": 1750773504,
+        "narHash": "sha256-5mNE0VDhebRSmmG9x5D/EjAope3SuntB4UReoqbsUmA=",
         "path": "/home/thorb/Code/Sandkasse/lib1",
         "type": "path"
       },
@@ -76,8 +76,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1750746282,
-        "narHash": "sha256-BrEz5tE5Hi2n8p3je9hvG1TPpDApoVGd4i+GergXFWk=",
+        "lastModified": 1750773535,
+        "narHash": "sha256-eB/MG9eQjlEPr7fSJzYii/sL7nUUHLXpLGzG69Lo9aA=",
         "path": "/home/thorb/Code/Sandkasse/lib2",
         "type": "path"
       },
