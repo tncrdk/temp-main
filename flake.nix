@@ -55,7 +55,8 @@
           cmake --build $out/build
         '';
         installPhase = ''
-          mkdir $out/install && cmake --install $out/build --prefix=$out/install
+          mkdir $out/install && cmake --install $out/build --prefix=$out/install \
+          && echo $out
         '';
       };
 
