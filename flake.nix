@@ -13,14 +13,12 @@
 
     # Example for 'numerical-helpers'
     library_a = {
-        # flake = false;
-        url = "path:/home/thorb/Code/Sandkasse/lib1";
+        url = "git+file:///home/thorb/Code/Sandkasse/lib1";
     };
 
     # Example for 'sim_utils'
     library_b = {
-        # flake = false;
-        url = "path:/home/thorb/Code/Sandkasse/lib2";
+        url = "git+file:///home/thorb/Code/Sandkasse/lib2";
     };
   };
 

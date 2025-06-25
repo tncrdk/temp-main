@@ -60,14 +60,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1750773504,
-        "narHash": "sha256-5mNE0VDhebRSmmG9x5D/EjAope3SuntB4UReoqbsUmA=",
-        "path": "/home/thorb/Code/Sandkasse/lib1",
-        "type": "path"
+        "lastModified": 1750836648,
+        "narHash": "sha256-R6svpsGqxaHpxhbfQbgvseGnBOhzsZFxNgkvHjLiIrM=",
+        "ref": "refs/heads/main",
+        "rev": "b7335161e86e57331e080c38db42a35681503b99",
+        "revCount": 10,
+        "type": "git",
+        "url": "file:///home/thorb/Code/Sandkasse/lib1"
       },
       "original": {
-        "path": "/home/thorb/Code/Sandkasse/lib1",
-        "type": "path"
+        "type": "git",
+        "url": "file:///home/thorb/Code/Sandkasse/lib1"
       }
     },
     "library_b": {
@@ -76,14 +79,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1750773535,
-        "narHash": "sha256-eB/MG9eQjlEPr7fSJzYii/sL7nUUHLXpLGzG69Lo9aA=",
-        "path": "/home/thorb/Code/Sandkasse/lib2",
-        "type": "path"
+        "lastModified": 1750836665,
+        "narHash": "sha256-WaDPklxuVB4OSKpMD5euPWlnhus/2jNDei/2wbkeF+o=",
+        "ref": "refs/heads/main",
+        "rev": "e299ebdc522c17b602f38f967bd23c35375b8aed",
+        "revCount": 8,
+        "type": "git",
+        "url": "file:///home/thorb/Code/Sandkasse/lib2"
       },
       "original": {
-        "path": "/home/thorb/Code/Sandkasse/lib2",
-        "type": "path"
+        "type": "git",
+        "url": "file:///home/thorb/Code/Sandkasse/lib2"
       }
     },
     "nixpkgs": {
