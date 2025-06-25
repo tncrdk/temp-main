@@ -60,11 +60,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1750836648,
+        "lastModified": 1750838153,
         "narHash": "sha256-R6svpsGqxaHpxhbfQbgvseGnBOhzsZFxNgkvHjLiIrM=",
         "ref": "refs/heads/main",
-        "rev": "b7335161e86e57331e080c38db42a35681503b99",
-        "revCount": 10,
+        "rev": "a9a5e506994c17ae1738e4674670dfe8b8e83d2a",
+        "revCount": 12,
         "type": "git",
         "url": "file:///home/thorb/Code/Sandkasse/lib1"
       },

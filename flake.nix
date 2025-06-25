@@ -67,8 +67,8 @@
           # buildLibrary_a
           # buildLibrary_b
           myExperiment # If you want to use the built sim executable directly
-          library_a.defaultPackage.${system}
-          library_b.defaultPackage.${system}
+          library_a.defaultPackage.${system}.default
+          library_b.defaultPackage.${system}.default
         ];
         shellHook = ''
           echo "Welcome to the Nix numerical simulation development environment!"
