@@ -54,7 +54,9 @@
         '';
         installPhase = ''
           mkdir $out/install && cmake --install $out/build --prefix=$out/install \
-          && echo $out
+          && echo "Out: $out" && echo "lib_b: ${library_b.packages.${system}.default}" && \
+          ln -s ${library_b.packages.${system}.default} $out/lib_b_install && \
+          ln -s ${library_b} $out/lib_b
         '';
       };
 
