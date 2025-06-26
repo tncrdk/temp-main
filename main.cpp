@@ -16,9 +16,15 @@ int main() {
     sum = lib_a::add_2(5);
     std::cout << "Sum_2 from lib_a: 2 + 5 = " << sum << std::endl;
 
+    sum = lib_a::add_3(5);
+    std::cout << "Sum_3 from lib_a: 3 + 5 = " << sum << std::endl;
+
     // Use functions from lib_b
     std::cout << lib_b::get_message_b() << std::endl;
     int product = lib_b::multiply_numbers(7, 3);
+    std::cout << "Product from lib_b: 7 * 3 = " << product << std::endl;
+
+    product = lib_b::multiply_2(7);
     std::cout << "Product from lib_b: 7 * 3 = " << product << std::endl;
 
     std::cout << "Application finished." << std::endl;
