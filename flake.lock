@@ -62,15 +62,14 @@
       "locked": {
         "lastModified": 1750851731,
         "narHash": "sha256-sINIx3UwDvMJHntVYepHZvTk6Ddv6gJcTRS71IQ8iXY=",
-        "ref": "refs/heads/main",
         "rev": "b4e8c682035b5578ebc9cf90376e98a623b8ada0",
         "revCount": 13,
         "type": "git",
-        "url": "file:/home/thorb/Code/Sandkasse/lib1"
+        "url": "file:///home/thorb/Code/Sandkasse/lib1"
       },
       "original": {
         "type": "git",
-        "url": "file:/home/thorb/Code/Sandkasse/lib1"
+        "url": "file:///home/thorb/Code/Sandkasse/lib1"
       }
     },
     "library_b": {
@@ -85,11 +84,11 @@
         "rev": "e299ebdc522c17b602f38f967bd23c35375b8aed",
         "revCount": 8,
         "type": "git",
-        "url": "file:/home/thorb/Code/Sandkasse/lib2"
+        "url": "https://github.com/tncrdk/lib2-temp"
       },
       "original": {
         "type": "git",
-        "url": "file:/home/thorb/Code/Sandkasse/lib2"
+        "url": "https://github.com/tncrdk/lib2-temp"
       }
     },
     "nixpkgs": {
