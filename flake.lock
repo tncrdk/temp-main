@@ -60,10 +60,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1750851731,
-        "narHash": "sha256-sINIx3UwDvMJHntVYepHZvTk6Ddv6gJcTRS71IQ8iXY=",
-        "rev": "b4e8c682035b5578ebc9cf90376e98a623b8ada0",
-        "revCount": 13,
+        "lastModified": 1750929668,
+        "narHash": "sha256-LK/8xN7zQdazyK9dGBQemI8F+O8eo9J4v0jSoARL2Kw=",
+        "ref": "refs/heads/main",
+        "rev": "4833f0b1922838ee23c157f4b66211f36fe0f10f",
+        "revCount": 14,
         "type": "git",
         "url": "file:///home/thorb/Code/Sandkasse/lib1"
       },
@@ -78,17 +79,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1750836665,
-        "narHash": "sha256-WaDPklxuVB4OSKpMD5euPWlnhus/2jNDei/2wbkeF+o=",
+        "lastModified": 1750929527,
+        "narHash": "sha256-p5lz6TpdFSk/8ZnnB5BhETc7UDsF4ychp0bYTBMKDZQ=",
         "ref": "refs/heads/main",
-        "rev": "e299ebdc522c17b602f38f967bd23c35375b8aed",
-        "revCount": 8,
+        "rev": "eaa2dd73b809dec341f6d85237cbe3c8470b7e24",
+        "revCount": 9,
         "type": "git",
-        "url": "https://github.com/tncrdk/lib2-temp"
+        "url": "file:///home/thorb/Code/Sandkasse/lib2"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/tncrdk/lib2-temp"
+        "url": "file:///home/thorb/Code/Sandkasse/lib2"
       }
     },
     "nixpkgs": {

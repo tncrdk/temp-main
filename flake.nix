@@ -18,8 +18,8 @@
 
     # Example for 'sim_utils'
     library_b = {
-        # url = "git+file:///home/thorb/Code/Sandkasse/lib2";
-        url = "git+https://github.com/tncrdk/lib2-temp";
+        url = "git+file:///home/thorb/Code/Sandkasse/lib2";
+        # url = "git+https://github.com/tncrdk/lib2-temp";
     };
   };
 
